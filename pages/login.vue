@@ -1,6 +1,8 @@
 <template lang="">
     <div>
         login
+        <nuxt-link to="/">main</nuxt-link>
+        <nuxt-link to="/mypage">mypage</nuxt-link>
         <div id="test"></div>
         <input type="email" id="email">
         <button @click="cookietest">cookietest</button>
@@ -9,6 +11,7 @@
 <script>
 import { markRaw } from 'vue';
 import {test} from "../middleware/authenticated.js";
+import { instance} from '../api/reuqest'; 
 export default {
     async asyncData(context) {
       // const data = await context.$axios.$get(...)
@@ -16,7 +19,7 @@ export default {
       return { todos: {title:'login'} };
       // `todos` 는 local data에 병합(merge)됩니다.
     },
-    middleware: test,
+    middleware: test('ㅡㄴ'),
     /*
       받은 정보 동적으로 title변경
     */ 
@@ -52,7 +55,7 @@ export default {
   },
   methods:{
     async cookietest(){
-      let reponse =await this.$axios('/test', { withCredentials: true });
+      let reponse =await instance.get('/test', { withCredentials: true });
       console.log(reponse);
     }
   }

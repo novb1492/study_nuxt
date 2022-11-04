@@ -42,8 +42,8 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-  axios: {
-    // 모듈 설정
-    baseURL: 'http://localhost:8080'
-  }
+  // axios: {
+  //   // 모듈 설정
+  //   baseURL: 'http://localhost:8080',
+  // }
 }

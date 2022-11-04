@@ -1,3 +1,3 @@
-export function test () {
-    console.log('aa');
+export function test (text) {
+    console.log(text);
 }
