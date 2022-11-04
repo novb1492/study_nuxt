@@ -3,6 +3,7 @@
         login
         <div id="test"></div>
         <input type="email" id="email">
+        <button @click="cookietest">cookietest</button>
     </div>
 </template>
 <script>
@@ -48,6 +49,12 @@ export default {
             console.log(error);
             alert('에디터생성에 실패했습니다');
           })
+  },
+  methods:{
+    async cookietest(){
+      let reponse =await this.$axios('/test', { withCredentials: true });
+      console.log(reponse);
+    }
   }
 }
 </script>

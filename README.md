@@ -67,3 +67,9 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+기본 테스트결과  
+-vue와 다르게 ssr렌더링이 적용되어 post호출시 소스가 만들어져 오면서 seo에 유리  
+-다만페이지간이동시 spa모드사용  
+-참고글  
+https://joshua1988.github.io/vue-camp/nuxt/universal-mode.html#%E1%84%91%E1%85%B3%E1%84%85%E1%85%B5%E1%84%91%E1%85%A2%E1%84%8E%E1%85%B5%E1%86%BC  
