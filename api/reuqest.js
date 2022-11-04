@@ -15,12 +15,7 @@ export  function setInterceptors(instance)  {
       return response;
     },
     (error) => {
-      console.log(error);
-      let response = error.response;
-      let data = response.data;
-      if(checkexpireLogin(response.status,data.message)){
-        location.href='/login?nextUrl='+location.href;
-      }
+      alert('error');
       return Promise.reject(error);
     },
   );
@@ -29,7 +24,7 @@ export  function setInterceptors(instance)  {
 }
 export const instance = axios.create({
   withCredentials: true,
-  baseURL: 'http://localhost:8080',
+  baseURL: 'http://localhost:80802345',
   headers: {
     'Content-Type': "application/json",
   }

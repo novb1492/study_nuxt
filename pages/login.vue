@@ -11,7 +11,7 @@
 <script>
 import { markRaw } from 'vue';
 import {test} from "../middleware/authenticated.js";
-import { instance} from '../api/reuqest'; 
+import { instance,setInterceptors } from '../api/reuqest'; 
 export default {
     async asyncData(context) {
       // const data = await context.$axios.$get(...)
@@ -55,8 +55,14 @@ export default {
   },
   methods:{
     async cookietest(){
-      let reponse =await instance.get('/test', { withCredentials: true });
-      console.log(reponse);
+      try {
+        setInterceptors(instance);
+        let reponse =await instance.get('/test');
+        console.log(reponse);
+      } catch (error) {
+          alert('av');
+      }
+
     }
   }
 }
