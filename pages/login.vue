@@ -14,8 +14,13 @@ import {test} from "../middleware/authenticated.js";
 import { instance,setInterceptors } from '../api/reuqest'; 
 export default {
     async asyncData(context) {
-      // const data = await context.$axios.$get(...)
-      // `todos` 는 data() 안에 선언되어 있지 않아도 됩니다.
+      try {
+        setInterceptors(instance);
+        let reponse =await instance.get('/test',{withCredentials:true});
+        console.log(reponse.data);
+      } catch (error) {
+          alert('av');
+      }
       return { todos: {title:'login'} };
       // `todos` 는 local data에 병합(merge)됩니다.
     },

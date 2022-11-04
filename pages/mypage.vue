@@ -21,6 +21,7 @@ export default {
         }),
     },
     async asyncData(context) {
+        console.log(context);
       // const data = await context.$axios.$get(...)
       // `todos` 는 data() 안에 선언되어 있지 않아도 됩니다.
       return { todos: [{title:'login',count:100}]};
