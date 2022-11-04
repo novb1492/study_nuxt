@@ -13,7 +13,7 @@
 import { mapActions, mapGetters, mapMutations } from "vuex";
 export default {
     computed: {
-        ...mapGetters( {
+        ...mapGetters( "test",{
             counter:"getName"
         }),
         ...mapGetters( "todo",{
@@ -21,13 +21,13 @@ export default {
         }),
     },
     methods:{
-        ...mapMutations( {
+        ...mapMutations("test", {
             increment: "increment",
         }),
         ...mapMutations("todo", {
             increment2: "increment",
         }),
-        ...mapActions( {
+        ...mapActions( "test",{
             increment3: "increment",
         }),
         ...mapActions("todo", {

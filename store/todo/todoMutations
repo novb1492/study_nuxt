@@ -1,0 +1,8 @@
+export default {
+    increment (state) { 
+        state.counter++; 
+      } ,
+      increment2 (state,num) { 
+         state.counter+=num; 
+     } 
+}
