@@ -4,5 +4,8 @@ export default {
       } ,
       increment2 (state,num) { 
          state.counter+=num; 
-     } 
+     } ,
+     setC (state,num) { 
+        state.counter=num; 
+    } 
 }

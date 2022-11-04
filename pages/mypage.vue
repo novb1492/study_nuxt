@@ -20,12 +20,25 @@ export default {
             counter2:"getName"
         }),
     },
+    async asyncData(context) {
+      // const data = await context.$axios.$get(...)
+      // `todos` 는 data() 안에 선언되어 있지 않아도 됩니다.
+      return { todos: [{title:'login',count:100}]};
+      // `todos` 는 local data에 병합(merge)됩니다.
+    },
+    mounted(){
+        //asyncData 값할당 받아서 store state 접근 후변경가능 
+        this.setC(this.todos[0].count);
+    },
     methods:{
         ...mapMutations("test", {
             increment: "increment",
         }),
         ...mapMutations("todo", {
             increment2: "increment",
+        }),
+        ...mapMutations("todo", {
+            setC: "setC",
         }),
         ...mapActions( "test",{
             increment3: "increment",
